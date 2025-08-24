@@ -1,0 +1,110 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+  background: transparent; /* тёмный фон, прозрачность 60% */
+}
+
+#workspaces {
+  background: alpha(@surface_container, 0.75);
+  border-radius: 20px;
+  padding: 0 15px;       /* паддинг 1, отступ от верха 2, отступ от бока */
+  margin: 5px 0 5px 10px;     /* маржин 1, пиксели между воркспейс 2, пиксели от бока */
+}
+
+/* каждая кнопка воркспейса */
+#workspaces button {
+  color: @outline;        /* Цвет неактивных цифр */
+  padding: 0 5px;
+  margin: 0 2px;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* активный воркспейс */
+#workspaces button.active {
+  background: alpha(@primary_fixed, 0.75);        /* Цвет фона активного раб.стола */
+  color: @background;         /* Цвет цифры активного раб. стола */
+  padding: 0 20px;
+  margin: 5px;
+}
+
+/* неактивный */
+#workspaces button:hover {
+  color: @primary;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#clock {
+  background: alpha(@surface_container, 0.75);     /* фон островка */
+  color: @secondary;          /* цвет текста */
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 0 15px;       /* внутренние отступы (высота / ширина) */
+  margin: 5px;          /* отступы вертикально/ */
+}
+
+/* общий параметр для троих */
+#cpu, #memory, #temperature {
+  background: alpha(@surface_container, 0.75);
+  color: @secondary;
+  font-weight: bold;
+  padding: 0 10px;   /* отступ вертикально и горизонт */
+  margin: 5px 0px;     /* отступы вертикально/горизтально */
+}
+
+
+/* 1 остров */
+#cpu {
+  border-radius: 20px 0 0 20px;
+}
+
+#memory {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#temperature {
+  border-radius: 0 20px 20px 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+
+/* общий параметр для 4 */
+#bluetooth, #network, #pulseaudio, #battery, #custom-wlogout {
+  background: alpha(@surface_container, 0.75);
+  color: @secondary;
+  font-weight: bold;
+  padding: 0 10px;   /* отступ вертикально и горизонт */
+  margin: 5px 0px;     /* отступы вертикально/горизтально */
+}
+
+
+/* 1 остров */
+#bluetooth {
+  border-radius: 20px 0 0 20px;
+}
+
+#network {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#battery {
+  border-radius: 0 20px 20px 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+
+#custom-wlogout {
+  border-radius: 20px;   /* скругление углов */
+  padding-left: 13px;    /* отступ слево внутри объекта */
+  margin-right: 10px;    /* отступ справа */
+}

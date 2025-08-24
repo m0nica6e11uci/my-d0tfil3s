@@ -1,0 +1,106 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 45, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/wlogout"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}"
+    },
+
+    "clock": {
+        "format": "  {:%H:%M:%S - %A, %d}", // можно {:%d-%m-%Y %H:%M} для даты
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "on-click": "ghostty -e htop"
+    },
+
+    "memory": {
+        "format": "󰓅 {used:0.1f}GB",
+        "tooltip": false,
+        "interval": 5
+    },
+
+    "temperature": {
+        "format": " {temperatureC}°C",
+        "tooltip": false,
+        "interval": 5
+    },
+
+    "bluetooth": {
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}", 
+        "format-connected":"{icon}",
+        "format-icons": {
+            "on":"󰂯",
+            "off": "󰂲",
+            "connected": "󰂱"
+        },
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 eth",
+        "format-disconnected": "󰖪 ",
+        "on-click": "ghostty -e nmtui",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "custom/wlogout": {
+        "format": " ",                    // иконка (power icon из Nerd Fonts)
+        "on-click": "wlogout",            // запуск wlogout
+        "interval": 0,
+        "tooltip": false
+    }
+}
