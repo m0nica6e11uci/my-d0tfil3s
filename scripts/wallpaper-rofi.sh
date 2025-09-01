@@ -4,7 +4,7 @@
 DIR="/home/m0nica/wallpapers/"
 
 # Временная директория для превью
-CACHE_DIR="/tmp/wallpaper-previews"
+CACHE_DIR="/home/m0nica/wallpaper-previews"
 mkdir -p "$CACHE_DIR"
 
 # Функция для создания превью
@@ -37,7 +37,7 @@ prepare_rofi_list() {
 SELECTED=$(prepare_rofi_list | rofi \
     -dmenu \
     -i \
-    -p "Выбери обои" \
+    -p "" \
     -theme-str 'listview { columns: 3; }' \
     -theme-str 'element { orientation: vertical; }' \
     -theme-str 'element-icon { size: 100px; }' \

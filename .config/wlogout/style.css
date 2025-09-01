@@ -28,7 +28,7 @@ button {
 }
 
 button:hover,button:focus {
-    background-color: alpha(@on_secondary_fixed_variant, 0.75);
+    background-color: @on_secondary_fixed_variant;
     background-size: 30%;
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
@@ -40,26 +40,26 @@ button span {
 
 
 #lock {
-    background-image: image(url("~/.config/wlogout/icons/lock.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/lock.png"));
 }
 
 #logout {
-    background-image: image(url("~/.config/wlogout/icons/logout.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/logout.png"));
     background-position: 200px;
 }
 
 #suspend {
-    background-image: image(url("~/.config/wlogout/icons/sleep.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/sleep.png"));
 }
 
 #shutdown {
-    background-image: image(url("~/.config/wlogout/icons/power.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/power.png"));
 }
 
 #reboot {
-    background-image: image(url("~/.config/wlogout/icons/restart.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/restart.png"));
 }
 
 #hibernate {
-    background-image: image(url("~/.config/wlogout/icons/hibernate.png"));
+    background-image: image(url("/home/m0nica/.config/wlogout/icons/hibernate.png"));
 }
